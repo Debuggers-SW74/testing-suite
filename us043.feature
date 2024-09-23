@@ -1,8 +1,8 @@
 @contactarServicio @Trello=https://trello.com/c/FrBzt0kY
 Feature: Contacto desde la página de destino
-  As visitante de la página de destino
-  I want to contactarme con FastPorte
-  In order to obtener más información del producto
+  Como visitante de la página de destino
+  Quiero contactarme con FastPorte
+  Para obtener más información del producto
 
 
 #-------------------------------------------------------------------------------------------
