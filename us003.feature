@@ -1,4 +1,4 @@
-@inicioSesionUsuario @Trello=https://trello.com/c/mN0aRbpr
+@inicioSesionUsuario @Trello=https://trello.com/c/WosF9dna
 Feature: Inicio de sesión de usuarios en la aplicación
   Como usuario de la aplicación
   Quiero iniciar sesión en la aplicación

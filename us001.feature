@@ -1,4 +1,4 @@
-@registroSupervisor @Trello=https://trello.com/c/RxIS3ojW
+@registroSupervisor @Trello=https://trello.com/c/lPnrU5ZD
 Feature: Registro de Supervisores
   Como supervisor de la empresa
   Quiero registrarme en la aplicación

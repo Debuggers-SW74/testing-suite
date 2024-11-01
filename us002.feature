@@ -1,4 +1,4 @@
-@registroConductor @Trello=https://trello.com/c/u2YdrjjZ
+@registroConductor @Trello=https://trello.com/c/iM5do3ES
 Feature: Registro de Conductores
   Como conductor
   Quiero registrarme en la aplicación
