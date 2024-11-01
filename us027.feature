@@ -12,6 +12,6 @@ Feature: Listar conductores por el código del sensor
     And <resultado>
 
     Examples:
-      | sensorCode      | status | resultado                                                                                     |
-      | CodigoExistente | 200    | se devuelve un recurso de usuario de tipo lista de Conductor con valores de nombre, correo electrónico, número de celular y contraseña |
-      | CodigoInexistente | 404  | se devuelve un mensaje en el cuerpo de la Respuesta: No se encontró el conductor con el código de sensor :sensorCode |
+      | sensorCode | status | resultado                                                                                     |
+      | HRS491     | 200    | se devuelve un recurso de usuario de tipo lista de Conductor con valores de nombre, correo electrónico, número de celular y contraseña |
+      | TXM126e    | 404    | se devuelve un mensaje en el cuerpo de la Respuesta: No se encontró el conductor con el código de sensor :sensorCode |

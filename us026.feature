@@ -12,6 +12,6 @@ Feature: Listar conductores por su nombre
     And <resultado>
 
     Examples:
-      | nombre          | status | resultado                                                                                     |
-      | NombreExistente | 200    | se devuelve un recurso de usuario de tipo lista de Conductor con valores de nombre, correo electrónico, número de celular y contraseña |
-      | NombreInexistente | 404  | se devuelve un mensaje en el cuerpo de la Respuesta: No se encontró el conductor con el nombre :nombre |
+      | nombre   | status | resultado                                                                                     |
+      | HRS491   | 200    | se devuelve un recurso de usuario de tipo lista de Conductor con valores de nombre, correo electrónico, número de celular y contraseña |
+      | TXM126e  | 404    | se devuelve un mensaje en el cuerpo de la Respuesta: No se encontró el conductor con el nombre :nombre |
