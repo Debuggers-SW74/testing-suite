@@ -1,33 +1,22 @@
-@capturaDeDatosDePresión @Trello=https://trello.com/c/PmGVQoRj
-Feature: Implementación del Edge Server
+Feature: Recibir el estado actual del sensor a través de un RESTful API
   Como desarrollador
-  Quiero implementar el Edge Server para gestionar los datos del dispositivo IoT
-  Para garantizar un funcionamiento eficiente del sistema.
+  Quiero obtener el estado actual del sensor
+  Para evaluar si los valores están dentro de los thresholds definidos
+
 
 #-------------------------------------------------------------------------------------------
-  Scenario: Realizar el endpoint de estados
-    Given el Edge Server está en funcionamiento
-    When se realiza una solicitud para guardar información de los datos sensados
-    Then el sistema guarda la información correctamente
-    And se recibe una respuesta con estado 201
+  Scenario: Recibir estado del sensor exitosamente
+    Given que el endpoint /api/v1/sensors/:sensorCode/state está disponible
+    And el sensorCode proporcionado es válido
+    When se realiza una solicitud GET al endpoint con el sensorCode válido
+    Then se recibe una respuesta con estado 200 OK
+    And el cuerpo de la respuesta contiene un recurso SensorState con los valores actuales del sensor (temperatura, humedad, presión y gas).
+
 
 #-------------------------------------------------------------------------------------------
-  Scenario: Realizar el endpoint de salud
-    Given el Edge Server está en funcionamiento
-    When se supera un límite umbral
-    Then el sistema registra la información de salud correspondiente
-    And se recibe una respuesta con estado 201
-
-#-------------------------------------------------------------------------------------------
-  Scenario: Realizar el endpoint de thresholds
-    Given el Edge Server está en funcionamiento
-    When se actualizan los límites de los umbrales
-    Then el sistema actualiza la información correctamente
-    And se recibe una respuesta con estado 200
-
-#-------------------------------------------------------------------------------------------
-  Scenario: Obtener token para el dispositivo IoT
-    Given el Edge Server está en funcionamiento
-    When se realiza una solicitud para obtener un token
-    Then el sistema genera un token válido
-    And se recibe una respuesta con estado 200
+  Scenario: Intento de obtener el estado de un sensor inexistente
+    Given que el endpoint /api/v1/sensors/:sensorCode/state está disponible
+    And el sensorCode proporcionado no existe
+    When se realiza una solicitud GET al endpoint con el sensorCode inválido
+    Then se recibe una respuesta con estado 404 Not Found
+    And el cuerpo de la respuesta contiene un mensaje indicando que no se encontraron datos para el sensor solicitado.
